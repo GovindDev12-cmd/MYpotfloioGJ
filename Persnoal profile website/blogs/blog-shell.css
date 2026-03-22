@@ -1,0 +1,149 @@
+@import "../projects/project-shell.css";
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 50;
+}
+
+.reading-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+}
+
+.blog-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog-article {
+  padding: 1.35rem;
+}
+
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.blog-meta span,
+.toc a,
+.source-list a,
+.post-links a {
+  color: var(--muted);
+}
+
+.blog-cover {
+  margin: 1rem 0 1.2rem;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.blog-cover img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+}
+
+.article {
+  display: grid;
+  gap: 1rem;
+}
+
+.article p,
+.article li {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.article h2,
+.article h3 {
+  margin: 1.15rem 0 0.2rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+.article ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.article blockquote,
+.callout {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.article blockquote {
+  border-left: 3px solid var(--accent);
+  color: var(--text);
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.reading-rail {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1rem;
+}
+
+.toc {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.toc a:hover,
+.toc a:focus-visible,
+.source-list a:hover,
+.source-list a:focus-visible,
+.post-links a:hover,
+.post-links a:focus-visible {
+  color: var(--text);
+}
+
+.source-list,
+.post-links {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.post-links {
+  margin-top: 1rem;
+}
+
+.info-card {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info-card strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@media (min-width: 960px) {
+  .blog-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+  }
+
+  .reading-rail {
+    position: sticky;
+    top: 1rem;
+  }
+}
